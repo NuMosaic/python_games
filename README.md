@@ -18,4 +18,5 @@ These games will implement a GUI (graphical user interface) and have a window ge
 - Card Games
 - Langauge Learning Games
 - Maze Games
+- GUI versions of the Text-Based games
 - etc. (when I think of more)
