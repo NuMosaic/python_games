@@ -1,0 +1,30 @@
+It's a breezy day. A day where Spring, despite it's constant identity crises,
+remembers it's meant to be a balance between the cold, dry winter and the hot, 
+humid summer, that it's meant to be a repreive from the extremes of Nature's 
+nature. Where the wind blows just strong enough to stir the freshly blooming 
+tree branches into a calm, entrancing dance, and the sun radiates just enough 
+to give all the creatures of the earth a warm hug.
+
+It's a perfect day in my book, but I have to spend it inside a dark, cramped 
+building reeking of alcohol. Of all the days Hans could've asked me for a 
+favor, why did it have to be this one?
+
+As I pass the food stalls in Thunder's Square, I see a group of boys about 
+my age playing Rigid in the meadow nearby.
+
+I sigh.
+
+I remember when Saul, an older boy who lived on the same block as me, first taught 
+me to play that game. I also remember how I would tear through the 
+competition, winning enough Denarii to buy sacks of sweets from 
+Arlen's. Now, I barely have enough time to eat and sleep properly, and all 
+the Denarii I make now goes towards keeping a roof over my head. 
+
+I wonder if I even have enough pocket change to buy a single Nihilator? 
+Nah, it's best I don't know, right? I probably shouldn't torture myself 
+like that...
+
+<c>
+Check how much pocket change you have? [C]heck or keep [W]alking?
+</c>
+<br C-0 W-0>
