@@ -10,8 +10,9 @@ a text-based game (adventure or otherwise).
 """
 
 # IMPORTS
-import os, sys
+import sys
 import time
+import re
 
 
 # GLOBAL VARIABLES
@@ -25,6 +26,7 @@ soft_punctuation = [',', '-', '(', ')', ':']
 markers = {"branch" : "<br .*>",
         "end" : "<end>",
         "crossroads" : ("<c>", "</c>")}
+crossroad = False
 
 
 # CLASSES
@@ -130,10 +132,51 @@ def load_story_script(filepath: str) -> list[str]:
     return file_lines
 
 
+def _read_branch_marker():
+    print("branch.")
+    return
+
+
+def _read_end_marker():
+    print("end.")
+    return
+
+
+def _handle_crossroads_content():
+    print("crossroad content.")
+    return
+
+
+def _handle_story_content():
+    print("story.")
+    return
+
+
+def read_markers(line: str):
+    global markers, crossroad
+    line = line.strip()
+    if line == markers["end"]:
+        _read_end_marker()
+    elif re.match(markers["branch"], line):
+        _read_branch_marker()
+    elif line == markers["crossroads"][0]:
+        print("crossroad start ->")
+        crossroad = True
+    elif line == markers["crossroads"][1]:
+        print("<- crossroad end")
+        crossroad = False
+    else:
+        if crossroad is True:
+            _handle_crossroads_content()
+        else:
+            _handle_story_content()
+    return
+
+
 # TESTING
 if __name__ == "__main__":
-    John = Character("John")
-    a = load_story_script("test.txt")
-    s = 0
+    #John = Character("John")
+    a = load_story_script("test3.txt")
     for l in a:
-        display_text(l, John)
+        #display_text(l, John)
+        read_markers(l)
