@@ -238,15 +238,14 @@ def read_player_input() -> str:
 
 # TESTING
 if __name__ == "__main__":
-    a = load_story_script("test3.txt")
+    a = load_story_script("test2.txt")
     options = {}
     status = 0
-    speed_level = 0.0
+    speed_level = 2
     player_choice = ""
 
     l = 0
     while l < len(a):
-        print("LINE:", l)
         s = read_markers(a[l], 2)
         if s == 2:
             end_message()
@@ -259,7 +258,6 @@ if __name__ == "__main__":
             # jump to line corresponding to choice
             l = options[player_choice]
             continue
-            print("CHANGING LINE:", l)
         elif s == 4:
             player_choice = read_player_input()
         elif s == 5:

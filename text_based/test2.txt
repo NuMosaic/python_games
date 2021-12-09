@@ -27,4 +27,22 @@ like that...
 <c>
 Check how much pocket change you have? [C]heck or keep [W]alking?
 </c>
-<br C-0 W-0>
+<br C-30 W-45>
+
+I reach into my pocket for my money-pouch. It feels light. As I peek into the tiny 
+bag, I see two silver coins, one gold tablet, and several copper pennies shining 
+back are me.
+
+... Well, at least I have enough for lunch this time. But, maybe I can get Hans 
+to buy for me and save this for dinner?
+
+I glance back at the guys playing Rigid... Maybe I could get just a little more 
+for both lunch and dinner?
+
+<c>
+Play a quick game of Rigid? [Y]es or [N]o?
+</c>
+<br Y-0 N-45>
+
+WORK IN PROGRESS
+<end>
