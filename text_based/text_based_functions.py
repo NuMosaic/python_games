@@ -132,17 +132,6 @@ def narrate_story(text: str,
     return 0
 
 
-def read_input():
-    for line in Reader:
-        if line.strip() == 'q':
-            break
-        display_text("You said: ", 0.1)
-        display_text("\n\t", 0)
-        display_text(line, 0.05)
-    display_text("QUITTING...\n", 0.1)
-    return
-
-
 def load_story_script(filepath: str) -> list[str]:
     """
     Parameters:
@@ -232,27 +221,49 @@ def read_markers(line: str,
 
 def read_player_input() -> str:
     """
+    Parameters:
+        None
+
+    Returns:
+        c : string
+            The player's input from stdin stream. 
+            It is stripped of whitespace at the ends.
     """
-    return
+    c = "..."
+    for line in Reader:
+        c = line.strip().upper()
+        break
+    return c
 
 
 # TESTING
 if __name__ == "__main__":
     a = load_story_script("test3.txt")
     options = {}
-    start, status = 0, 0
+    status = 0
     speed_level = 0.0
-    player_choice = ''
+    player_choice = ""
 
-    for l in range(start, len(a)):
-        s = read_markers(a[l], 1)
+    l = 0
+    while l < len(a):
+        print("LINE:", l)
+        s = read_markers(a[l], 2)
         if s == 2:
             end_message()
             break
         elif s == 3:
             options = parse_branch_marker(a[l])
-            # go to line player_choice corresponds to in options
+            # to make sure the player chooses an actual option
+            while player_choice not in options.keys():
+                player_choice = read_player_input()
+            # jump to line corresponding to choice
+            l = options[player_choice]
+            continue
+            print("CHANGING LINE:", l)
         elif s == 4:
             player_choice = read_player_input()
         elif s == 5:
             status = narrate_story(a[l], speed_level)
+        l += 1 # increment
+
+

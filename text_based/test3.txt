@@ -1,14 +1,17 @@
-<br A-0 B-1 C-2>
 Haha
 Blank line...?
+
 <c>
-Where are you going?
+Where are you going? To the [O]cean or [P]ark?
 </c>
+<br O-8 P-14>
+
 MY YOUR BUSINESS!
 <c>
-No crying, little one.
+No crying, little one. [O]kay or [N]o?
 </c>
-<br C-3 D-4>
+<br O-15 N-0>
+
 <end>
 But, I wanted to write some more...
 
