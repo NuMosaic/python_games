@@ -238,20 +238,23 @@ def read_player_input() -> str:
 
 # TESTING
 if __name__ == "__main__":
-    a = load_story_script("test2.txt")
+    # The data passed into the python file from the cmd-line
+    story_text, speed_level = sys.argv[1], int(sys.argv[2])
+
+    # Game Loop
+    text_list = load_story_script(story_text)
     options = {}
     status = 0
-    speed_level = 2
     player_choice = ""
 
     l = 0
-    while l < len(a):
-        s = read_markers(a[l], 2)
+    while l < len(text_list):
+        s = read_markers(text_list[l], 2)
         if s == 2:
             end_message()
             break
         elif s == 3:
-            options = parse_branch_marker(a[l])
+            options = parse_branch_marker(text_list[l])
             # to make sure the player chooses an actual option
             while player_choice not in options.keys():
                 player_choice = read_player_input()
@@ -261,7 +264,7 @@ if __name__ == "__main__":
         elif s == 4:
             player_choice = read_player_input()
         elif s == 5:
-            status = narrate_story(a[l], speed_level)
+            narrate_story(text_list[l], speed_level)
         l += 1 # increment
 
 
